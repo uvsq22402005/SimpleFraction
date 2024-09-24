@@ -24,8 +24,11 @@ hs_err_pid*
 replay_pid*
 
 
-# IntelliJ IDEA project files
+# Ignorer les fichiers de configuration d'IDE
 /.idea/
+/.vscode/
 /*.iml
+/*.class
+/target/
 
 
