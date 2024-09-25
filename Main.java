@@ -23,7 +23,7 @@ public class Main {
         assert f2.doubleValue() == 5.0;
 
         // Test de l'addition
-        Fraction result = f1.add(new Fraction(1, 4)); // 3/4 + 1/4 = 1/1
+        Fraction result = f1.add(new Fraction(1, 4)); // 3/4 + 1/4 = 4/4 = 1/1
         assert result.toString().equals("16/16"); // Simplification non implémentée dans cet exemple
 
         // Test d'égalité
@@ -34,6 +34,11 @@ public class Main {
         assert f1.compareTo(new Fraction(1, 2)) > 0; // 3/4 est plus grand que 1/2
         assert f1.compareTo(new Fraction(3, 4)) == 0; // 3/4 est égal à 3/4
         assert f1.compareTo(new Fraction(5, 4)) < 0; // 3/4 est plus petit que 5/4
+
+        // Test d'héritage de Number
+        Number aNumber = java.math.BigDecimal.ONE;
+        Number anotherNumber = new Fraction(1, 2);
+        assert Math.abs(aNumber.doubleValue() + anotherNumber.doubleValue() - 1.5) < 1E-8;
 
         System.out.println("Tous les tests sont passés avec succès !");
     }
